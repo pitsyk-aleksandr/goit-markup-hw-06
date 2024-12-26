@@ -44,6 +44,29 @@ textarea {
   color: chocolate;
 }
 
+/* Выезд label из поля ввода */
+.form-field.up {
+  margin-top: 40px;
+  position: relative;
+}
+
+.form-label.up {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 500ms linear;
+}
+
+/* label поднимается вверх на 50 пикселей*/
+/* Обязательно использовать селектор соседа  +  */
+/* При событии :focus для input   */
+/* И при событии, когда НЕ показывается placeholder - :not(:placeholder-shown)*/
+.form-input.up:focus + .form-label.up,
+.form-input.up:not(:placeholder-shown) + .form-label.up {
+  transform: translateY(-50px);
+}
+
 .group {
   margin-bottom: 10px;
 }

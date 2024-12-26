@@ -508,7 +508,7 @@
             <button class="button" type="submit">
               Підписатися
               <svg class="icon" width="24" height="24">
-                <use href="./icon/icons-2.svg#icon-send"></use>
+                <use href="./icon/icons.svg#icon-send"></use>
               </svg>
             </button>
           </form>
@@ -529,7 +529,7 @@
             <div class="thumb-input">
               <input type="text" name="user-name" id="name" />
               <svg class="icon" width="18" height="18">
-                <use href="./icon/icons-2.svg#icon-person"></use>
+                <use href="./icon/icons.svg#icon-person"></use>
               </svg>
             </div>
           </div>
@@ -539,7 +539,7 @@
             <div class="thumb-input">
               <input type="tel" name="user-tel" id="tel" />
               <svg class="icon" width="18" height="18">
-                <use href="./icon/icons-2.svg#icon-phone"></use>
+                <use href="./icon/icons.svg#icon-phone"></use>
               </svg>
             </div>
           </div>
@@ -549,7 +549,7 @@
             <div class="thumb-input">
               <input type="email" name="user-email" id="email" />
               <svg class="icon" width="18" height="18">
-                <use href="./icon/icons-2.svg#icon-email"></use>
+                <use href="./icon/icons.svg#icon-email"></use>
               </svg>
             </div>
           </div>
@@ -566,13 +566,13 @@
           </div>
         </div>
 
-        <div class="form-policy">
-          <input type="checkbox" name="policy" value="ok-policy" id="policy" />
-          <label for="policy">
-            Погоджуюся з розсилкою та приймаю
-            <a href="">Умови договору</a></label
+        <label class="field-policy">
+          <input type="checkbox" name="policy" value="ok-policy" class="checkbox-input" />
+          <span class="checkbox-icon"></span>
+          <span class="label-policy"
+            >Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></span
           >
-        </div>
+        </label>
 
         <button class="button-submit" type="submit">Відправити</button>
 

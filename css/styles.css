@@ -1357,31 +1357,56 @@ address .tel:focus {
   border-color: var(--acsent-color);
 }
 
-/* Блок принятия условий договора */
-.form-modal .form-policy {
+/* Отметка о принятии условий */
+.form-modal .field-policy {
+  /* Делаем флекс для иконки и текста и выравниваем по вертикали */
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* Отступ от комментария */
   margin-bottom: 30px;
 }
 
-/* Метка чекбокса принятия условий */
-.form-modal .form-policy label {
-  margin-left: 9px;
-  /* Шрифт  */
+.form-modal .label-policy {
+  /* Шрифт метки */
   font-family: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.714; /* 24 px*/
   letter-spacing: 0.03em;
+
   color: var(--main-text-color);
 }
 
 /* Ссылка на условия договора */
-.form-modal .form-policy label a {
+.form-modal .label-policy a {
   color: var(--acsent-color);
 }
 
+/* Иконка метки принятия условий */
+.checkbox-input {
+  /* Убираем стандартный квадратик от браузера */
+  /* Новое свойство : */
+  appearance: none;
+  position: absolute;
+}
+
+/* Пользовательская иконка checkbox в невыбранном состоянии */
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  background-image: url(../icon/0-svg-original/check-0.svg);
+  background-size: contain;
+}
+
+/* Замена иконки, если input:checked - выбран */
+.checkbox-input:checked + .checkbox-icon {
+  background-image: url(../icon/0-svg-original/check-1.svg);
+}
+
+/* Кнопка  */
 .form-modal .button-submit {
   /* Центрирование блока */
   display: flex;
