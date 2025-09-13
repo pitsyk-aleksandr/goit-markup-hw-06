@@ -147,7 +147,7 @@ body {
 .container {
   min-width: 320px;
   width: 100%;
-  padding: 0 16px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -717,17 +717,44 @@ body {
 
 /* Підзаголовки секцій */
 .feature-title {
-  margin: 8px 0;
-  /* Текстовий стиль - Header 3 */
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  margin: 0 0 8px 0;
+  /* Текстовий стиль - Header 2 */
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   /* Колір  - стиль  --navy-blue: #2e2f42  */
   color: var(--navy-blue);
 }
 
-/* .feature-text {} */
+@media (min-width: 1158px) {
+  .feature-title {
+    margin: 8px 0;
+    /* Текстовий стиль - Header 3 */
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+}
+
+.feature-text {
+  /* Текстовий стиль - Body Medium */
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 1158px) {
+  .feature-text {
+    /* Текстовий стиль - Body */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
 
 /* #endregion */
 
@@ -740,6 +767,7 @@ body {
 }
 
 .team .section-title {
+  /* Текстовий стиль - Header 2 */
   /* Вертикальний відступ від заголовка секції */
   margin-bottom: 72px;
 }
@@ -748,6 +776,7 @@ body {
 .card-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 72px;
 }
 
@@ -755,14 +784,10 @@ body {
   .card-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 64px;
-  }
-
-  .card-item {
-    /* Розрахунок ширини блоку */
-    flex-basis: calc((100% - 24px) / 2);
   }
 }
 
@@ -771,18 +796,19 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 24px;
-    /* column-gap: 64px; */
-  }
-
-  .card-item {
-    /* Розрахунок ширини блоку */
-    flex-basis: calc((100% - 3 * 24px) / 4);
+    column-gap: 24px;
   }
 }
 
 /* Картка робітника */
 .card-item {
+  /* Фіксована ширина карток робітників */
+  width: 264px;
+  /* Розрахунок ширини блоку - респонсивний варіант - на tablet */
+  /* flex-basis: calc((100% - 24px) / 2); */
+  /* Розрахунок ширини блоку - респонсивний варіант - на desktop */
+  /* flex-basis: calc((100% - 3 * 24px) / 4); */
+
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 4px;
@@ -817,6 +843,7 @@ body {
 }
 
 .card-position {
+  /* Текстовий стиль - Body */
   text-align: center;
   margin-bottom: 8px;
 }
@@ -882,6 +909,7 @@ body {
   /* Flex-container для карток проєктів */
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 48px;
 }
 
@@ -889,14 +917,10 @@ body {
   .project-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 72px;
-  }
-
-  .project-item {
-    /* Розрахунок ширини блоку */
-    flex-basis: calc((100% - 24px) / 2);
   }
 }
 
@@ -904,20 +928,40 @@ body {
   .project-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 48px;
   }
-
-  .project-item {
-    /* Розрахунок ширини блоку */
-    flex-basis: calc((100% - 2 * 24px) / 3);
-  }
 }
 
 .project-item {
+  /* Фіксована ширина картки */
+  width: 288px;
+  /* Розрахунок ширини блоку - Responsible version - tablet */
+  /* flex-basis: calc((100% - 24px) / 2); */
+  /* Розрахунок ширини блоку - Responsible version - desktop */
+  /* flex-basis: calc((100% - 2 * 24px) / 3); */
   /* Параметри переходу */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .project-item {
+    /* Фіксована ширина картки */
+    width: 356px;
+    /* Розрахунок ширини блоку - Responsible version - tablet */
+    /* flex-basis: calc((100% - 24px) / 2); */
+  }
+}
+
+@media (min-width: 1158px) {
+  .project-item {
+    /* Фіксована ширина картки */
+    width: 360px;
+    /* Розрахунок ширини блоку - Responsible version - desktop */
+    /* flex-basis: calc((100% - 2 * 24px) / 3); */
+  }
 }
 
 .project-img {
@@ -1081,12 +1125,14 @@ body {
 }
 
 .footer-desc {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 288px;
   /* Колір стиль  --cloud: #f4f4fd */
   color: var(--cloud);
 }
 @media (min-width: 768px) {
   .footer-desc {
+    margin: 0;
     max-width: 264px;
   }
 }
@@ -1186,9 +1232,20 @@ body {
   }
 }
 
+/* Поле з вкладеним input */
+.subscribe-label {
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .subscribe-label {
+    margin: 0;
+  }
+}
+
 /* Поле input для вводу електронної пошти */
 .subscribe-input {
-  width: 100%;
+  width: 288px;
   height: 40px;
   font-size: 12px;
   line-height: 2;
